@@ -1,0 +1,31 @@
+{
+  "realm": "beacon",
+  "enabled": true,
+  "displayName": "Beacon local identity broker",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "clients": [
+    {
+      "clientId": "beacon-web",
+      "name": "Beacon Web",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "local-dev-secret",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "redirectUris": ["http://localhost:3000/api/auth/callback/enterprise-sso"],
+      "webOrigins": ["http://localhost:3000"],
+      "protocol": "openid-connect",
+      "defaultClientScopes": ["web-origins", "acr", "roles", "profile", "email", "groups"]
+    }
+  ],
+  "groups": [
+    { "name": "beacon-owners" },
+    { "name": "beacon-admins" },
+    { "name": "pmo-leads" },
+    { "name": "project-managers" },
+    { "name": "beacon-contributors" },
+    { "name": "beacon-viewers" },
+    { "name": "internal-audit" }
+  ]
+}
